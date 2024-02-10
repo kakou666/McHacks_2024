@@ -10,6 +10,7 @@
     grid-area:title;
 }
 .textareaBox{
+
     grid-area:title;
 }
 .buttonBox{
@@ -21,15 +22,49 @@
 }
 .btnImport{
     grid-area:import;
+    /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
 }
 
 .btnFlash{
     grid-area:option1;
+    border:3px solid  rgba(255, 0, 0, 0.366);
+    border-radius: 10px;
+    /* padding:7px; */
+    height:35px;
+    margin:2px;
+    background-color: white;
+    font-family:'Quicksand', sans-serif;
+    cursor:pointer;
 }
+.btnFlash:hover{
+    background-color: rgba(255, 0, 0, 0.366);
+}
+
+.btnFlash-icon, .btnFlash-text{
+    display: inline-flex;
+    align-items: center;
+
+}
+
 .btnSummary{
     grid-area:option2;
+<<<<<<< Updated upstream
 }
 
 .box1{
     
 }
+=======
+    border:3px solid   rgba(255, 0, 0, 0.366);;
+    border-radius: 10px;
+    padding:7px;
+    margin:2px;
+    background-color: white;
+    font-family:'Quicksand', sans-serif;
+    cursor:pointer;
+}
+
+.btnSummary:hover{
+    background-color: rgba(255, 0, 0, 0.366);
+}
+>>>>>>> Stashed changes
