@@ -1,9 +1,9 @@
 .box{
     display: grid;
     grid-template-areas: 
-        "title title title"
-        "textarea textarea textarea"
-        "button button button"
+        "title"
+        "textarea"
+        "button"
     ;
 }
 .formTitle{
@@ -13,5 +13,19 @@
     grid-area:title;
 }
 .buttonBox{
-    grid-area:button;;
+    grid-area:button;
+    grid-template-areas: 
+    "import option1 option2" 
+    ;
+
+}
+.btnImport{
+    grid-area:import;
+}
+
+.btnFlash{
+    grid-area:option1;
+}
+.btnSummary{
+    grid-area:option2;
 }

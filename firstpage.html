@@ -9,22 +9,40 @@
     <body>
         <div class="box">
             <div>
-                <p class="formTitle"></p>
+                <p class="formTitle">FORM TITLE</p>
             </div>
         <form>
             <div class="textareaBox">
                 <textarea placeholder="Insert your text here..."></textarea>
             </div>
             <div class="buttonBox">
-                <input type="file" >
-                <button>Flashcard</button>
-                <button>Summary</button>
+                <input class="btnImport" type="file" >
+                <button class="btnFlash">Flashcard</button>
+                <button class="btnSummary">Summary</button>
             </div>
         </form>
         </div>
 
 
 
-
+    <script src="three.r134.min.js"></script>
+    <script src="vanta.waves.min.js"></script>
+    <script>
+        VANTA.WAVES({
+            el: "body",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0xef4563,
+            shininess: 19.00,
+            waveHeight: 17.50,
+            waveSpeed: 0.55,
+            zoom: 1.00
+        })
+    </script>    
     </body>
 </html>
