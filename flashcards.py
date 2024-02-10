@@ -5,7 +5,7 @@ import re
 nlp = spacy.load("fr_core_news_sm")
 
 # Définir le texte à analyser
-texte = "Napoléon Bonaparte est mort le 05/05/1821. Justin Trudeau est né le 25/12/1971 à Ottawa. Christophe Colomb a découvert l'Amérique."
+texte = "Napoléon Bonaparte est mort le 05/05/1821. Justin Trudeau est né le 25/12/1971 à Ottawa. Christophe Colomb a découvert l'Amérique. Robert Oppenheimer a inventé la bombe atomique. "
 
 # Analyser le texte
 doc = nlp(texte)

@@ -10,6 +10,7 @@ texte = "Napoléon Bonaparte est mort le 05/05/1821. Justin Trudeau est né le 2
 # Analyser le texte
 doc = nlp(texte)
 
+
 def detecter_dates(texte):
     # Formats acceptés :  04-01-1997, 09/07/1897"
     pattern = r'\d{2}.\d{2}.\d{4}'
@@ -39,6 +40,7 @@ def generer_questions_et_reponses(texte):
         dates = detecter_dates(phrase)
 
         for token in phrase_analysee:
+            # print(f"{token} : {token.pos_}")
             if token.pos_ == "AUX" or token.pos_ == "VERB":
                 verbe.append(token.text)  # Ajouter le texte du token, pas l'objet Token lui-même
         
@@ -52,7 +54,7 @@ def generer_questions_et_reponses(texte):
                 break
         if verbe_position != -1:
             for token in phrase_analysee[verbe_position + 1:]:
-                if token.pos_ != "PUNCT" and token.pos_ != "VERB": # Exclure ponctuation et verbes
+                if token.pos_ != "PUNCT" and token.pos_ != "VERB":  # Exclure les signes de ponctuation
                     reste_phrase += token.text_with_ws
 
         for ent in phrase_analysee.ents:
@@ -61,9 +63,9 @@ def generer_questions_et_reponses(texte):
                 if contient_date(phrase):
                     #print(f"{ent} : {ent.label_}")
                     questions.append(f"Quand est-ce que {nom} {verbe_concatene} ?")
-                    reponses.append(f"Le {detecter_dates(phrase)}")
+                    reponses.append(f"En {detecter_dates(phrase)}")
                 else : 
-                    # print({verbe_concatene})
+                    # print(f"Reste de la phrase : {reste_phrase}, verbe_C : {verbe_concatene}")
                     questions.append(f"Qui {verbe_concatene} {reste_phrase}?")   
                     reponses.append(f"{ent}")
                 
