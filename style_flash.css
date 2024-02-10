@@ -52,6 +52,6 @@ body {
 }
 
 .back {
-    background: linear-gradient(to right, #31f20b, #05ff47);
+    background: linear-gradient(to right, #f2db0b, #ead67e);
     transform: rotateY(180deg);
 }
