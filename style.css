@@ -3,6 +3,15 @@
     grid-template-areas: 
         "title title title"
         "textarea textarea textarea"
-        "import option1 option2"
+        "button button button"
     ;
+}
+.formTitle{
+    grid-area:title;
+}
+.textareaBox{
+    grid-area:title;
+}
+.buttonBox{
+    grid-area:button;;
 }
