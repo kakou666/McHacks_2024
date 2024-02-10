@@ -5,7 +5,7 @@ import re
 nlp = spacy.load("fr_core_news_sm")
 
 # Définir le texte à analyser
-texte = "Napoléon Bonaparte est mort le 05/05/1821. Justin Trudeau est né le 25/12/1971 à Ottawa."
+texte = "Christophe Colomb a découvert l'Amérique."
 
 # Analyser le texte
 doc = nlp(texte)
@@ -27,39 +27,75 @@ def contient_date(phrase):
         return False
 
 def generer_questions(texte):
-    
     questions = []
-    nom = None
-    verbe = []
-
+    
     for phrase in texte.split(". "):
         phrase_analysee = nlp(phrase)
-        
+        nom = None
+        verbe = []
+        reste_phrase = ""  # Initialiser la variable reste_phrase ici
+
         # Détecter les dates dans la phrase
         dates = detecter_dates(phrase)
 
-        for token in phrase_analysee :
-            if token.pos_ == "AUX" or token.pos_ == "VERB" : 
-                verbe.append(token)
-                continue
+        for token in phrase_analysee:
+            if token.pos_ == "AUX" or token.pos_ == "VERB":
+                verbe.append(token.text)  # Ajouter le texte du token, pas l'objet Token lui-même
+                
+        
+        verbe_concatene = " ".join(verbe)
+        # Récupérer le reste de la phrase après le verbe
+        verbe_position = -1
+        for i, token in enumerate(phrase_analysee):
+            if token.text in verbe:
+                verbe_position = i
+                break
+        if verbe_position != -1:
+            for token in phrase_analysee[verbe_position + 1:]:
+                reste_phrase += token.text_with_ws
+
+        for ent in phrase_analysee.ents:
+            if ent.label_ == "PER":
+                nom = ent.text
+                if contient_date(phrase):
+                    questions.append(f"Quand est-ce que {nom} {verbe_concatene} ?")
+                else : 
+                    questions.append(f"Qui {verbe_concatene} {reste_phrase}?")         
+
+    return questions
+
+def generer_reponses(texte):
+    
+    reponses = []
+    
+    for phrase in texte.split(". "):
+        phrase_analysee = nlp(phrase)
+        nom = None
+        verbe = []
+
+        # Détecter les dates dans la phrase
+        dates = detecter_dates(phrase)
+
+        for token in phrase_analysee:
+            if token.pos_ == "AUX" or token.pos_ == "VERB":
+                verbe.append(token.text)  # Ajouter le texte du token, pas l'objet Token lui-même
         
         verbe_concatene = " ".join(verbe)
 
         for ent in phrase_analysee.ents:
-
-
-            if ent.label_ == "PER" : 
-                nom = ent.label_
+            if ent.label_ == "PER":
+                nom = ent.text
                 if contient_date(phrase):
-                    print(f"{ent} : {ent.label_}")
-                    questions.append(f"Quand est-ce que {nom} {verbe_concatene} ?")
-            # if ent.label_ == "DATE" and ent.text in dates:
-            #     questions.append(f"En quelle année {ent.text} {phrase_analysee[ent.root.head.i]} ?")
+                    reponses.append(f"En {detecter_dates(phrase)}")
 
-    return questions
+    return reponses
 
 # Test
 questions = generer_questions(texte)
 for question in questions:
     print(question)
 
+# reponses = generer_reponses(texte)
+
+# for reponse in reponses : 
+#     print(reponse)
