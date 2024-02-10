@@ -6,13 +6,24 @@
         "button"
     ;
 }
+
 .formTitle{
     grid-area:title;
 }
-.textareaBox{
 
+.textareaBox{
     grid-area:title;
+    display: flexbox;
+    
 }
+
+textarea{
+    width:90%;
+    height: 500px;
+}
+
+
+
 .buttonBox{
     grid-area:button;
     grid-template-areas: 
@@ -29,7 +40,7 @@
     grid-area:option1;
     border:3px solid  rgba(255, 0, 0, 0.366);
     border-radius: 10px;
-    /* padding:7px; */
+    padding:7px;
     height:35px;
     margin:2px;
     background-color: white;
@@ -48,16 +59,10 @@
 
 .btnSummary{
     grid-area:option2;
-<<<<<<< Updated upstream
-}
-
-.box1{
-    
-}
-=======
-    border:3px solid   rgba(255, 0, 0, 0.366);;
+    border:3px solid  rgba(255, 0, 0, 0.366);
     border-radius: 10px;
     padding:7px;
+    height:35px;
     margin:2px;
     background-color: white;
     font-family:'Quicksand', sans-serif;
@@ -67,4 +72,4 @@
 .btnSummary:hover{
     background-color: rgba(255, 0, 0, 0.366);
 }
->>>>>>> Stashed changes
+
