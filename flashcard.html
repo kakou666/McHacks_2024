@@ -1,13 +1,48 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta charset="utf-8">
-        <title>Submit</title>    
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-      
-    <script> Flashcard(); </script>
-    </body>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcards</title>
+    <link rel="stylesheet" href="style_flash.css">
+</head>
+<body>
+    <div class="flashcard-container">
+        <div class="flashcard" onclick="this.classList.toggle('flipped');">
+            <div class="front">
+                Question 1
+            </div>
+            <div class="back">
+                Réponse 1
+            </div>
+        </div>
+        <div class="flashcard" onclick="this.classList.toggle('flipped');">
+            <div class="front">
+                Question 2
+            </div>
+            <div class="back">
+                Réponse 2
+            </div>
+        </div>
+        <!-- Ajoutez plus de flashcards ici -->
+        <div class="flashcard" onclick="this.classList.toggle('flipped');">
+            <div class="front">
+                Question 3
+            </div>
+            <div class="back">
+                Réponse 3
+            </div>
+        </div>
+        <div class = "flashcard" onclick="this.classList.toggle('flipped');">
+            <div class="front">
+                Question 4
+            </div>
+            <div class="back">
+                Réponse 4
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
 </html>
