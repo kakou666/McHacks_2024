@@ -89,3 +89,4 @@ reponses = generer_reponses(texte)
 
 for reponse in reponses : 
     print(reponse)
+    
