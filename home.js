@@ -1,7 +1,8 @@
 let clickedBtnHome=document.getElementById("btnHome")
 
-clickedBtnIndex.addEventListener('click',function(event){
-  if(confirm("Make sure you save your flashcards before exiting!")){
-    window.open("home.html")
+clickedBtnHome.addEventListener('click',function(event){
+  if(confirm("Make sure you saved your flashcards before exiting! If not click on 'Cancel' and save them")){
+    window.location.href="home.html"
+  }else{
   }
 })

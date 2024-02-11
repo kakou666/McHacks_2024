@@ -21,7 +21,7 @@ body{
 
 .navBar a{
     color:  rgb(231, 86, 86) ;
-    font-family: 'Palatino', serif;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
     text-decoration: none;
     padding: 10px;
     border: 2px solid transparent;
