@@ -1,63 +1,77 @@
-.box{
-    display: grid;
-    grid-template-areas: 
-        "title"
-        "textarea"
-        "button"
-    ;
+html,body {
+    margin: 1;
+    height: 100%;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.formTitleDiv{
+    background-color: white;
+    /* margin:10px; */
+    border: 3px solid rgb(235, 140, 156);
+    border-radius: 10px;
+    padding: 10px;
 }
 
 .formTitle{
-    grid-area:title;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    text-align: center;
+    color:  rgb(235, 140, 156);
 }
 
-.textareaBox{
-    grid-area:title;
-    display: flexbox;
-    
-}
-
-textarea{
+.textArea{
     width:90%;
     height: 500px;
+    border: 3px solid rgb(235, 140, 156);
+    border-radius: 15px;
+    margin:10px;
+    padding: 20px;
 }
 
-
-
-.buttonBox{
-    grid-area:button;
-    grid-template-areas: 
-    "import option1 option2" 
-    ;
-
-}
 .btnImport{
-    grid-area:import;
-    /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+   display: none;
+   font-size: 5px;
+   font-family: Verdana, Arial, Helvetica, sans-serif;
 }
-
-.btnFlash{
-    grid-area:option1;
+.btnImportCustom{
     border:3px solid  rgba(255, 0, 0, 0.366);
     border-radius: 10px;
     padding:7px;
     height:35px;
     margin:2px;
     background-color: white;
-    font-family:'Quicksand', sans-serif;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
     cursor:pointer;
+    align-self: flex-start;
 }
+
+.btnFlash{
+    border:3px solid  rgba(255, 0, 0, 0.366);
+    border-radius: 10px;
+    padding:7px;
+    height:35px;
+    margin:2px;
+    background-color: white;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    cursor:pointer;
+    align-self: flex-end;
+}
+
 .btnFlash:hover{
     background-color: rgba(255, 0, 0, 0.366);
 }
 
-.btnFlash-icon, .btnFlash-text{
+.btn-icon, .btn-text{
     display: inline-flex;
     align-items: center;
-
 }
 
-.btnSummary{
+/* .btnSummary{
     grid-area:option2;
     border:3px solid  rgba(255, 0, 0, 0.366);
     border-radius: 10px;
@@ -71,5 +85,5 @@ textarea{
 
 .btnSummary:hover{
     background-color: rgba(255, 0, 0, 0.366);
-}
+} */
 
