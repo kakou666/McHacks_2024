@@ -47,8 +47,32 @@
             </form>
         </div>
 
-    <script src="import.js"></script>  
+    <!-- <script src="import.js"></script>   -->
+    <script>
+    function importFile() {
+        var fileInput = document.getElementById('fileInput');
+        var textArea = document.querySelector('.textArea');
+        var fileNameDisplay = document.getElementById('fileName');
     
+        fileInput.click();
+    
+        fileInput.addEventListener('change', function () {
+            var file = this.files[0];
+    
+            if (file) {
+                var reader = new FileReader();
+    
+                reader.onload = function (e) {
+                    fileContent=e.target.result;
+                    textArea.value = fileContent;
+                    // fileNameDisplay.innerText = 'File: ' + file.name;
+                };
+    
+                reader.readAsText(file);
+            }
+        });
+    }
+    </script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     
