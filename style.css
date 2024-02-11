@@ -137,7 +137,7 @@ body{
 
 @media screen and (max-width:600px) {
     .navBar{
-        flex-direction: column;
+        flex-direction: row;
         align-items: flex-start;
     }
     .navBar ul{
