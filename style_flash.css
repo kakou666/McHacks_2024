@@ -55,3 +55,26 @@ body {
     background: linear-gradient(to right, #f2db0b, #ead67e);
     transform: rotateY(180deg);
 }
+
+.btnSave, .btnHome{
+    border:3px solid rgb(231, 86, 86) ;
+    border-radius: 10px;
+    padding:7px;
+    height:35px;
+    margin:2px;
+    background-color: rgba(255, 255, 255, 0.566);
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    cursor:pointer;
+    align-self: flex-start;
+}
+
+.btnSave:hover, .btnHome:hover{
+    background-color: #feb47b;
+}
+
+.btn-icon, .btn-text{
+    display: inline-flex;
+    align-items: center;
+    color:rgb(231, 86, 86);
+}
+

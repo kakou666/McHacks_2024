@@ -14,7 +14,7 @@ function importFile() {
             reader.onload = function (e) {
                 fileContent=e.target.result;
                 textArea.value = fileContent;
-                fileNameDisplay.innerText = 'File: ' + file.name;
+                // fileNameDisplay.innerText = 'File: ' + file.name;
             };
 
             reader.readAsText(file);
