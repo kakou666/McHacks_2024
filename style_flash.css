@@ -66,6 +66,9 @@ body {
     font-family: Verdana, Arial, Helvetica, sans-serif;
     cursor:pointer;
     align-self: flex-start;
+    position:absolute;
+    bottom:10px;
+    left:10px;
 }
 
 .btnSave:hover, .btnHome:hover{

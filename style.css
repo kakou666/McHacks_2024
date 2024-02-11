@@ -105,11 +105,18 @@ body{
     align-self: flex-start;
 }
 
+.btnHome{
+    position:absolute;
+    bottom:10px;
+    left:10px;
+}
+
 .btnFlash:hover, .btnImportCustom:hover, .btnHome:hover{
     background-color: transparent;
 }
 
 .btn-icon, .btn-text{
+    
     display: inline-flex;
     align-items: center;
     color:rgb(231, 86, 86);
