@@ -12,7 +12,8 @@ function importFile() {
             var reader = new FileReader();
 
             reader.onload = function (e) {
-                textArea.value = e.target.result; // Update to use textArea
+                fileContent=e.target.result;
+                textArea.value = fileContent;
                 fileNameDisplay.innerText = 'File: ' + file.name;
             };
 
